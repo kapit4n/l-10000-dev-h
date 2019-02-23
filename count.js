@@ -51,24 +51,37 @@ function sumFunc(x, y) {
 }
 
 setTimeout(function() {
+    let result = [];
+    let sortIt = true;
     reducedJs = totalCountsJs.reduce(sumFunc, 0);
-    writeCount('jsCount.txt', reducedJs);
+    result.push({
+        lan: "JS",
+        lines: reducedJs
+    });
     console.log("Javascript is: " + reducedJs)
     
     
     reducedJava = totalCountsJava.reduce(sumFunc, 0);
-    writeCount('javaCount.txt', reducedJava);
-    console.log("Java is: " + reducedJava)
-    
+    result.push({
+        lan: "Java",
+        lines: reducedJava
+    });
+
     reducedScala = totalCountsScala.reduce(sumFunc, 0);
-    writeCount('scalaCount.txt', reducedScala);
-    console.log("Scala is: " + reducedScala)
+    result.push({
+        lan: "Scala",
+        lines: reducedScala
+    });
 
     reducedDotnet = totalCountsDotnet.reduce(sumFunc, 0);
-    writeCount('dotnetCount.txt', reducedDotnet);
-    console.log("DotNet is: " + reducedDotnet)
-
-    console.log("total is: "  + (reducedJs + reducedJava + reducedScala + reducedDotnet));
+    result.push({
+        lan: "CS",
+        lines: reducedDotnet
+    });
+    if (sortIt) {
+        result.sort((x, y) => x.lines > y.lines);
+    }
+    result.forEach( x => console.log("*    " + x.lan + ":\t" + x.lines))
+    console.log("*    total:\t"  + (reducedJs + reducedJava + reducedScala + reducedDotnet));
 
 }, 5000);
-
