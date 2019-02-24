@@ -3,6 +3,7 @@ const srcFilejs = './src/js';
 const srcFileJava = './src/java';
 const srcFileScala = './src/scala';
 const srcFileDotnet = './src/dotnet';
+const displayFile = false;
 
 const countLines = function(filePath, callback) {
     let i;
@@ -30,7 +31,7 @@ function countLinesFiles(srcFile, files, collection) {
 
 function countFileByLanguage(srcFile, collection) {
     fs.readdir(srcFile, (err, files) => {
-        console.log("Files: " + files.join(", "));
+        if (displayFile) console.log("Files: " + files.join(", "));
         countLinesFiles(srcFile, files, collection);
       })
 }
@@ -54,26 +55,29 @@ setTimeout(function() {
     let result = [];
     let sortIt = true;
     reducedJs = totalCountsJs.reduce(sumFunc, 0);
+    writeCount('jsCount.txt', reducedJs);
     result.push({
         lan: "JS",
         lines: reducedJs
     });
-    console.log("Javascript is: " + reducedJs)
     
     
     reducedJava = totalCountsJava.reduce(sumFunc, 0);
+    writeCount('javaCount.txt', reducedJava);
     result.push({
         lan: "Java",
         lines: reducedJava
     });
 
     reducedScala = totalCountsScala.reduce(sumFunc, 0);
+    writeCount('scalaCount.txt', reducedScala);
     result.push({
         lan: "Scala",
         lines: reducedScala
     });
 
     reducedDotnet = totalCountsDotnet.reduce(sumFunc, 0);
+    writeCount('dotnetCount.txt', reducedDotnet);
     result.push({
         lan: "CS",
         lines: reducedDotnet

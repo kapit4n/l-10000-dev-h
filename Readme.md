@@ -1,6 +1,6 @@
 # Result
-*    Scala:     306
-*    JS:        313
+*    JS:        314
 *    CS:        343
 *    Java:      505
-*    total:     1467
+*    Scala:     541
+*    total:     1703
