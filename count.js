@@ -3,6 +3,8 @@ const srcFilejs = './src/js';
 const srcFileJava = './src/java';
 const srcFileScala = './src/scala';
 const srcFileDotnet = './src/dotnet';
+const srcFileWords = './src/words';
+
 const displayFile = false;
 
 const countLines = function(filePath, callback) {
@@ -20,6 +22,7 @@ var totalCountsJs = [];
 var totalCountsJava = [];
 var totalCountsScala = [];
 var totalCountsDotnet = [];
+var totalCountsWords = [];
 
 function countLinesFiles(srcFile, files, collection) {
     files.forEach(f => {
@@ -40,6 +43,7 @@ countFileByLanguage(srcFilejs, totalCountsJs);
 countFileByLanguage(srcFileJava, totalCountsJava);
 countFileByLanguage(srcFileScala, totalCountsScala);
 countFileByLanguage(srcFileDotnet, totalCountsDotnet);
+countFileByLanguage(srcFileWords, totalCountsWords);
 
 function writeCount(fileName, content) {
     fs.writeFile(fileName, content, function(err) {
@@ -82,10 +86,19 @@ setTimeout(function() {
         lan: "CS",
         lines: reducedDotnet
     });
+
+    reducedWords = totalCountsWords.reduce(sumFunc, 0);
+    writeCount('wordsCount.txt', reducedWords);
+    result.push({
+        lan: "WDs",
+        lines: reducedWords
+    });
+
+
     if (sortIt) {
         result.sort((x, y) => x.lines > y.lines);
     }
     result.forEach( x => console.log("*    " + x.lan + ":\t" + x.lines))
-    console.log("*    total:\t"  + (reducedJs + reducedJava + reducedScala + reducedDotnet));
+    console.log("*    total:\t"  + (reducedJs + reducedJava + reducedScala + reducedDotnet + reducedWords));
 
 }, 5000);
