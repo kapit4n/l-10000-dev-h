@@ -7,3 +7,4 @@
 
 ## Motivation
 - secrets to staying motivated
+- job as a software developer
