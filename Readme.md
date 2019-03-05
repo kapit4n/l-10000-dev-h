@@ -1,4 +1,12 @@
-# Result
+# write source code
+
+Code to understand concepts
+
+## Main result
+- React, Scala
+
+
+## Current Result
 *    JS:        504
 *    CS:        506
 *    WDs:       532

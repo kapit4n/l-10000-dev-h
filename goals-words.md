@@ -10,4 +10,4 @@
 - job as a software developer
 - learning scala
 - react redux
-- re
+- play and react integration
