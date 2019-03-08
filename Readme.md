@@ -1,15 +1,19 @@
-# write source code
+# All count
+- Scala:	623
+- JS   :	638
+- Java :	658
+- WD   :	669
+- CS   :	1038
 
-Code to understand concepts
-
-## Main result
-- React, Scala
-
-
-## Current Result
-*    JS:        504
-*    CS:        506
-*    WDs:       532
-*    Scala:     541
-*    Java:      658
-*    total:     2741
+# run it
+node ./count.js
+    
+# Activities
+* Write source code related to any topic
+* Comment the understanding part of it
+    
+# Purposes
+* Reach to 100 lines daily
+* 2000 lines of source code monthly
+* 20 commits more
+    
