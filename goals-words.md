@@ -11,3 +11,6 @@
 - learning scala
 - react redux
 - play and react integration
+
+## Best practices
+- react architectre best practices
