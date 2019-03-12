@@ -4,6 +4,7 @@
 - software developemnt
 - best practices
 - unit test
+- software features
 
 ## Motivation
 - secrets to staying motivated
@@ -14,3 +15,6 @@
 
 ## Best practices
 - react architectre best practices
+
+## Software features
+- spring security java

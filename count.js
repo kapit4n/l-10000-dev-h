@@ -133,6 +133,7 @@ node ./count.js
 `;
 
     let countInfo = "# All count" + result.reduce((x, y) => x + "\n- " + y.lan + ":\t" + y.lines, "");
+    countInfo += "\n- TOTAL:\t" + (reducedJs + reducedJava + reducedScala + reducedDotnet + reducedWords);
     countInfo += "\n" + run +"\n" + enfore +  activity +  purposes;
     writeCount('Readme.md', countInfo);
 
