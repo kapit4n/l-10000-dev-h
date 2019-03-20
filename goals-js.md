@@ -6,3 +6,4 @@
 
 ## react js
 - create components react
+- altjs

@@ -5,6 +5,7 @@
 - best practices
 - unit test
 - software features
+- algorithms
 
 ## Motivation
 - secrets to staying motivated
@@ -18,3 +19,7 @@
 
 ## Software features
 - spring security java
+
+## Algorithms
+- Dynamic programming
+- 

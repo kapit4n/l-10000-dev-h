@@ -1,10 +1,10 @@
 # All count
-- JS   :	638
 - Java :	658
+- JS   :	796
 - CS   :	1038
 - Scala:	1090
-- WD   :	1129
-- TOTAL:	4553
+- WD   :	1619
+- TOTAL:	5201
 
 # run it
 node ./count.js
