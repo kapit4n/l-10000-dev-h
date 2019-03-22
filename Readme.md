@@ -3,8 +3,8 @@
 - JS   :	796
 - CS   :	1038
 - Scala:	1090
-- WD   :	1619
-- TOTAL:	5201
+- WD   :	1772
+- TOTAL:	5354
 
 # run it
 node ./count.js
