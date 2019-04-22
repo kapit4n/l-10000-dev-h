@@ -132,13 +132,25 @@ node ./count.js
 * Code writing velocity
 `;
 
-    let countInfo = "# All count" + result.reduce((x, y) => x + "\n- " + y.lan + ":\t" + y.lines, "");
-    countInfo += "\n- TOTAL:\t" + (reducedJs + reducedJava + reducedScala + reducedDotnet + reducedWords);
-    countInfo += "\n" + run +"\n" + enfore +  activity +  purposes;
+    let technologies = `
+# Technologies
+* Angular, React, Vue
+* Spring, Play
+* Scala, Java
+`;
+
+    let colHeaders =  "\n|Language" + "|Lines"  + "|" + "%|"
+    colHeaders += "\n|----------|-------|--------|";
+    let countInfo = "# All count" + result.reduce((x, y) => x + "\n|" + y.lan + "|" + y.lines + "" + "|" + '![progress](http://progressed.io/bar/' + Number((y.lines / 100000 * 100 * 5)).toFixed(0) + ' "progress")'  + "|", colHeaders);
+    
+
+    let total = (reducedJs + reducedJava + reducedScala + reducedDotnet + reducedWords);
+    let goalPercent = Number(total / 100000 * 100).toFixed(3);
+
+    countInfo += "\n|TOTAL|" + total + "|" + goalPercent + "%|";
+    console.log(countInfo);
+    countInfo += "\n" + run +"\n" + enfore +  activity +  purposes +  technologies;
+    
     writeCount('Readme.md', countInfo);
-
-    result.forEach(x => console.log("*    " + x.lan + ":\t" + x.lines));
-
-    console.log("*    TOTAL:\t" + (reducedJs + reducedJava + reducedScala + reducedDotnet + reducedWords));
 
 }, 5000);
